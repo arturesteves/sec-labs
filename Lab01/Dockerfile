@@ -20,7 +20,7 @@ RUN apt-get install default-jre -y
 RUN apt-get install default-jdk -y
 
 # compile all java files 
-RUN find -name " /javacrypto/src/pt/ulisboa/tecnico/meic/sirs/*.java" > tocompile.txt
+RUN find -name "/javacrypto/src/pt/ulisboa/tecnico/meic/sirs/*.java" > tocompile.txt
 RUN javac @tocompile.txt
 
 RUN javac /javacrypto/src/pt/ulisboa/tecnico/meic/sirs
