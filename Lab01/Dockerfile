@@ -12,9 +12,6 @@ RUN apt-get install git -y
 # copy project files to be accessible inside the container
 COPY JavaCrypto /javacrypto
 
-#
-COPY JavaCrypto/intro/inputs /tmp/sirs/inputs/
-
 # install java dependencies
 RUN apt-get install default-jre -y
 RUN apt-get install default-jdk -y
@@ -27,7 +24,5 @@ RUN echo "export PKG=pt.ulisboa.tecnico.meic.sirs" >> ~/.bashrc
 RUN echo "export INPUT=/javacrypto/intro/inputs" >> ~/.bashrc
 RUN echo "export OUTPUT=/tmp/sirs/outputs" >> ~/.bashrc
 
-WORKDIR /tmp/sirs
 
-# create folder on host
-RUN mkdir /tmp/sirs/outputs
+WORKDIR /tmp/sirs
