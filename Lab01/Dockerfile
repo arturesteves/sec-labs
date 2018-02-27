@@ -10,10 +10,10 @@ RUN apt-get update
 RUN apt-get install git -y
 
 # copy project files to be accessible inside the container
-COPY Lab01/JavaCrypto /javacrypto
+COPY JavaCrypto /javacrypto
 
 #
-COPY Lab01/JavaCrypto/intro/inputs /tmp/sirs/inputs/
+COPY JavaCrypto/intro/inputs /tmp/sirs/inputs/
 
 # install java dependencies
 RUN apt-get install default-jre -y
