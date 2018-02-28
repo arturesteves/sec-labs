@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [[ ! -e /usr/src/my-app/inputs && ! -e /usr/src/my-app/outputs]]; then
+if [[ ! -e /usr/src/my-app/inputs && ! -e /usr/src/my-app/outputs]] then
 	mkdir /usr/src/my-app/inputs
 	mkdir /usr/src/my-app/outputs
 fi
