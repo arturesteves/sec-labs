@@ -10,19 +10,22 @@ RUN apt-get update
 RUN apt-get install git -y
 
 # copy project files to be accessible inside the container
-COPY JavaCrypto /javacrypto
+COPY JavaCrypto /tmp/sirs
 
 # install java dependencies
 RUN apt-get install default-jre -y
 RUN apt-get install default-jdk -y
 
 # compile all java files 
-#RUN javac /javacrypto/src/pt/ulisboa/tecnico/meic/sirs
+#RUN javac /tmp/sirs/src/pt/ulisboa/tecnico/meic/sirs/*
 
 # create env. variables
 RUN echo "export PKG=pt.ulisboa.tecnico.meic.sirs" >> ~/.bashrc
-RUN echo "export INPUT=/javacrypto/intro/inputs" >> ~/.bashrc
-RUN echo "export OUTPUT=/tmp/sirs/outputs" >> ~/.bashrc
+RUN echo "export home=/usr/src/my-app" >> ~/.bashrc
 
+# make file executable
+RUN chmod +x cp_in-outputs.sh 
 
-WORKDIR /tmp/sirs
+WORKDIR /usr/src/my-app
+RUN mkdir inputs
+RUN mkdir outputs
