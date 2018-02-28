@@ -8,6 +8,7 @@ FROM ubuntu
 
 RUN apt-get update
 RUN apt-get install git -y
+RUN apt-get install vim -y
 
 # copy project and other files to be accessible inside the container
 COPY JavaCrypto /tmp/sirs
