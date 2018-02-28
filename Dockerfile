@@ -9,8 +9,9 @@ FROM ubuntu
 RUN apt-get update
 RUN apt-get install git -y
 
-# copy project files to be accessible inside the container
+# copy project and other files to be accessible inside the container
 COPY JavaCrypto /tmp/sirs
+COPY cp_in-outputs.sh cp_in-outputs.sh
 
 # install java dependencies
 RUN apt-get install default-jre -y
