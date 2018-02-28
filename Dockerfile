@@ -27,6 +27,7 @@ RUN echo "export home=/usr/src/my-app" >> ~/.bashrc
 # make file executable
 RUN chmod +x cp_in-outputs.sh 
 
+RUN mkdir /usr/src/my-app/inputs
+RUN mkdir /usr/src/my-app/outputs
+
 WORKDIR /usr/src/my-app
-RUN mkdir inputs
-RUN mkdir outputs
