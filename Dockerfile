@@ -29,7 +29,7 @@ RUN echo "export home=/usr/src/my-app" >> ~/.bashrc
 RUN chmod +x cp_in-outputs.sh 
 
 # create directories to store files on host
-RUN mkdir /usr/src/my-app/inputs
-RUN mkdir /usr/src/my-app/outputs
+#RUN mkdir /usr/src/my-app/inputs
+#RUN mkdir /usr/src/my-app/outputs
 
 WORKDIR /usr/src/my-app
