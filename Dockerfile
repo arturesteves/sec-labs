@@ -9,10 +9,13 @@ FROM ubuntu
 RUN apt-get update
 RUN apt-get install git -y
 RUN apt-get install vim -y
+RUN apt-get install dos2unix -y
 
 # copy project and other files to be accessible inside the container
 COPY JavaCrypto /tmp/sirs
 COPY cp_in-outputs.sh cp_in-outputs.sh
+# needed because of the difference of style line ending between windows and unix
+RUN dos2unix cp_in-outputs.sh
 
 # install java dependencies
 RUN apt-get install default-jre -y
