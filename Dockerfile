@@ -18,7 +18,7 @@ RUN apt-get install default-jre -y
 RUN apt-get install default-jdk -y
 
 # compile all java files 
-#RUN javac /tmp/sirs/src/pt/ulisboa/tecnico/meic/sirs/*
+RUN javac /tmp/sirs/src/pt/ulisboa/tecnico/meic/sirs/*
 
 # create env. variables
 RUN echo "export PKG=pt.ulisboa.tecnico.meic.sirs" >> ~/.bashrc
